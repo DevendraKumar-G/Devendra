@@ -1,0 +1,218 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.glass {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.typing-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-bar {
+  width: 0;
+  transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hire-btn-wrapper {
+  position: relative;
+}
+
+/* Subtle impact pulse on the button as bubbles hit it */
+.hire-btn {
+  animation: buttonImpact 2.4s ease-in-out infinite;
+}
+
+/* Iridescent marbled soap bubble matching the reference image */
+.bubble {
+  position: absolute;
+  right: 0;
+  border-radius: 9999px;
+  background:
+    /* Glossy top-right / upper-left specular highlight */
+    radial-gradient(circle at 68% 30%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.35) 18%, rgba(255, 255, 255, 0) 45%),
+    /* Soft pastel inner wash */
+    radial-gradient(circle at 30% 65%, rgba(255, 255, 255, 0.75) 0%, rgba(244, 114, 182, 0.25) 55%, rgba(56, 189, 248, 0.25) 100%),
+    /* Marbled cyan, magenta, yellow & lavender swirls */
+    conic-gradient(
+      from 45deg at 52% 54%,
+      rgba(34, 211, 238, 0.72),
+      rgba(236, 72, 153, 0.75),
+      rgba(253, 224, 71, 0.65),
+      rgba(168, 85, 247, 0.65),
+      rgba(56, 189, 248, 0.78),
+      rgba(244, 114, 182, 0.72),
+      rgba(34, 211, 238, 0.72)
+    );
+  /* Crisp bubble edge + soft pink aura */
+  border: 1px solid rgba(203, 213, 225, 0.75);
+  box-shadow:
+    inset 0 0 5px rgba(255, 255, 255, 0.9),
+    inset -2px -2px 6px rgba(236, 72, 153, 0.35),
+    0 0 12px 3px rgba(244, 114, 182, 0.42)[cite: 2];
+  pointer-events: none;
+  z-index: 20;
+  opacity: 0;
+}
+
+/* Individual bubble sizes, vertical positions & staggered delays */
+.b1 {
+  width: 30px;
+  height: 30px;
+  top: 20%;
+  animation: bubbleHit 2.4s ease-in infinite 0s;
+}
+
+.b2 {
+  width: 20px;
+  height: 20px;
+  top: 62%;
+  animation: bubbleHit 2.4s ease-in infinite 0.6s;
+}
+
+.b3 {
+  width: 25px;
+  height: 25px;
+  top: 38%;
+  animation: bubbleHit 2.4s ease-in infinite 1.2s;
+}
+
+.b4 {
+  width: 15px;
+  height: 15px;
+  top: 72%;
+  animation: bubbleHit 2.4s ease-in infinite 1.8s;
+}
+
+/* Travels from 55px to the right, hits the right edge (0px), and pops */
+@keyframes bubbleHit {
+  0% {
+    transform: translateX(55px) scale(0.55);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.95;
+  }
+  80% {
+    transform: translateX(2px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-4px) scale(1.7);
+    opacity: 0;
+  }
+}
+
+/* Tiny ripple glow when bubbles strike the button */
+@keyframes buttonImpact {
+  0%, 75%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+  }
+  85% {
+    transform: scale(1.03);
+    box-shadow: 0 0 16px rgba(244, 114, 182, 0.55)[cite: 2];
+  }
+}
+
+
+/*Logo*/
+.vortex-logo-stage {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.css-shard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 11px;
+  height: 8px;
+  clip-path: polygon(18% 4%, 92% 16%, 76% 88%, 8% 72%, 26% 42%);
+  background: linear-gradient(135deg, #bae6fd 0%, #38bdf8 45%, #0284c7 100%);
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.55);
+  pointer-events: none;
+}
+
+/* Clockwise (right) shards — orbit radius 42px */
+.r1 { animation: orbitRight 4s linear infinite; --a: 0deg; --r: 42px; }
+.r2 { animation: orbitRight 4s linear infinite; --a: 90deg; --r: 45px; width: 9px; height: 7px; }
+.r3 { animation: orbitRight 4s linear infinite; --a: 180deg; --r: 41px; width: 13px; height: 9px; }
+.r4 { animation: orbitRight 4s linear infinite; --a: 270deg; --r: 46px; width: 8px; height: 6px; }
+
+/* Counter-clockwise (left) shards — orbit radius 50px */
+.l1 { animation: orbitLeft 6s linear infinite; --a: 35deg; --r: 50px; width: 9px; height: 7px; }
+.l2 { animation: orbitLeft 6s linear infinite; --a: 125deg; --r: 48px; width: 12px; height: 8px; }
+.l3 { animation: orbitLeft 6s linear infinite; --a: 215deg; --r: 52px; width: 8px; height: 6px; }
+.l4 { animation: orbitLeft 6s linear infinite; --a: 305deg; --r: 49px; width: 10px; height: 7px; }
+
+.vortex-center-logo {
+  position: relative;
+  z-index: 10;
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 2px solid rgba(14, 165, 233, 0.45);
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.18);
+}
+
+.vortex-center-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes orbitRight {
+  from {
+    transform: rotate(var(--a)) translateX(var(--r)) rotate(calc(-1 * var(--a)));
+  }
+  to {
+    transform: rotate(calc(var(--a) + 360deg)) translateX(var(--r)) rotate(calc(-1 * (var(--a) + 360deg)));
+  }
+}
+
+@keyframes orbitLeft {
+  from {
+    transform: rotate(var(--a)) translateX(var(--r)) rotate(calc(-1 * var(--a)));
+  }
+  to {
+    transform: rotate(calc(var(--a) - 360deg)) translateX(var(--r)) rotate(calc(-1 * (var(--a) - 360deg)));
+  }
+}

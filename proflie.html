@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Creative Developer & Technologist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+            },
+            accent: {
+              400: '#2dd4bf',
+              500: '#14b8a6',
+            },
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-indigo-500/30">
+
+  <!-- Sticky Glass Navbar -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-40 glass border-b border-slate-200/70 dark:border-slate-800/70 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2.5 font-bold text-lg tracking-tight">        
+        <div class="vortex-logo-stage">
+        <!-- Shards spinning right (clockwise) -->
+        <span class="css-shard r1"></span>
+        <span class="css-shard r2"></span>
+        <span class="css-shard r3"></span>
+        <span class="css-shard r4"></span>
+
+        <!-- Shards spinning left (counter-clockwise) -->
+        <span class="css-shard l1"></span>
+        <span class="css-shard l2"></span>
+        <span class="css-shard l3"></span>
+        <span class="css-shard l4"></span>
+
+        <!-- Center Circular Logo -->
+        <div class="vortex-center-logo w-14 h-14">
+          <img src="logo.jpg" alt="Logo" />
+        </div>
+</div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#home" class="nav-link hover:text-indigo-500 dark:hover:text-indigo-400 transition">Home</a>
+        <a href="#about" class="nav-link hover:text-indigo-500 dark:hover:text-indigo-400 transition">About</a>
+        <a href="#skills" class="nav-link hover:text-indigo-500 dark:hover:text-indigo-400 transition">Skills</a>
+        <a href="#projects" class="nav-link hover:text-indigo-500 dark:hover:text-indigo-400 transition">Projects</a>
+        <a href="https://drive.google.com/file/d/1IplEIh9y5eqfWWYlvBmETP5o5R6L3MbW/view?usp=drive_link" target="_blank" class="nav-link hover:text-indigo-500 dark:hover:text-indigo-400 transition">Resume</a>
+        <a href="#contact" class="nav-link hover:text-indigo-500 dark:hover:text-indigo-400 transition">Contact</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-2.5">
+       <!--  <button id="themeToggle" aria-label="Toggle Dark Mode" class="w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 flex items-center justify-center text-slate-700 dark:text-amber-300 hover:border-indigo-500 transition cursor-pointer">
+          <i id="themeIcon" class="fa-solid fa-sun text-sm"></i>
+        </button> -->
+
+      <!--   <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium shadow-md shadow-indigo-600/25 transition">
+          Hire Me
+        </a>
+        <button id="mobileMenuBtn" aria-label="Open Menu" class="md:hidden w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-200">
+          <i class="fa-solid fa-bars"></i>
+        </button> -->
+
+        <div class="hire-btn-wrapper hidden sm:inline-flex items-center relative">
+        <a href="#contact" class="hire-btn relative z-10 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium shadow-md shadow-indigo-600/25 transition">
+          Hire Me
+        </a>
+
+        <!-- Incoming Bubbles from the Right -->
+        <span class="bubble b1"></span>
+        <span class="bubble b2"></span>
+        <span class="bubble b3"></span>
+        <span class="bubble b4"></span>
+      </div>
+
+      <button id="mobileMenuBtn" aria-label="Open Menu" class="md:hidden w-9 h-9 rounded-lg border border-slate-200 flex items-center justify-center text-slate-700">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 px-6 py-4 space-y-3 text-sm font-medium">
+      <a href="#home" class="block py-1.5 nav-link hover:text-indigo-500">Home</a>
+      <a href="#about" class="block py-1.5 nav-link hover:text-indigo-500">About</a>
+      <a href="#skills" class="block py-1.5 nav-link hover:text-indigo-500">Skills</a>
+      <a href="#projects" class="block py-1.5 nav-link hover:text-indigo-500">Projects</a>
+      <a href="https://drive.google.com/file/d/1IplEIh9y5eqfWWYlvBmETP5o5R6L3MbW/view?usp=drive_link" target="_blank" class="block py-1.5 nav-link hover:text-indigo-500">Resume</a>
+      <a href="#contact" class="block py-1.5 nav-link hover:text-indigo-500">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+    <div class="hero-glow -top-24 -left-24 w-96 h-96 bg-indigo-500/30 dark:bg-indigo-600/20"></div>
+    <div class="hero-glow top-20 right-0 w-96 h-96 bg-teal-400/25 dark:bg-teal-500/15"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <!--   <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-300 text-xs font-semibold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Available for Exciting Opportunities
+          </div> -->
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
+            Hi, I'm <span class="bg-gradient-to-r from-indigo-500 via-purple-500 to-teal-400 bg-clip-text text-transparent">Devendra Kumar</span>
+          </h1>
+
+          <div class="text-xl sm:text-2xl font-semibold text-slate-700 dark:text-slate-300 min-h-[2rem]">
+            <span id="typedText" class="text-indigo-600 dark:text-indigo-400"></span><span class="typing-cursor">|</span>
+          </div>
+
+          <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            I craft fast, accessible, and visually compelling web applications, structured digital workflows, and clean interfaces with precision and attention to detail.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#projects" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 transition transform hover:-translate-y-0.5">
+              Explore Projects
+            </a>
+            <a href="#contact" class="px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-indigo-500 dark:hover:border-indigo-400 bg-white/60 dark:bg-slate-900/60 font-semibold text-sm transition">
+              Get in Touch
+            </a>
+          </div>
+
+         <!--  <div class="flex items-center justify-center lg:justify-start gap-5 pt-3 text-slate-500 dark:text-slate-400">
+            <a href="https://github.com/DevendraKumar-G" target="_blank" rel="noreferrer" aria-label="GitHub" class="hover:text-indigo-500 transition text-xl"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/devendra-kumarchauhan/" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="hover:text-indigo-500 transition text-xl"><i class="fa-brands fa-linkedin"></i></a>
+           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-indigo-500 transition text-xl"><i class="fa-brands fa-instagram"></i></a>
+            <button id="copyEmailHero" aria-label="Copy Email" class="hover:text-indigo-500 transition text-xl cursor-pointer" title="Copy Email Address">
+              <i class="fa-regular fa-envelope"></i>
+            </button>
+          </div> -->
+        </div>
+
+        <!-- Hero Showcase Card -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-6 shadow-2xl">
+            <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-200 dark:border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+              </div>
+              <span class="text-xs font-mono text-slate-400">profile.json</span>
+            </div>
+            <pre class="text-xs sm:text-sm font-mono text-slate-700 dark:text-slate-300 overflow-x-auto leading-relaxed"><code>{
+  <span class="text-indigo-500">"role"</span>: <span class="text-teal-500">"FrontEnd-Developer &amp; UI Builder"</span>,
+  <span class="text-indigo-500">"focus"</span>: [
+    <span class="text-teal-500">"Responsive Web Apps"</span>,
+    <span class="text-teal-500">"System &amp; Data Workflows"</span>,
+    <span class="text-teal-500">"Clean Documentation"</span>
+  ],
+  <span class="text-indigo-500">"mindset"</span>: <span class="text-teal-500">"Thorough &amp; Detail-Driven"</span>,
+  <span class="text-indigo-500">"status"</span>: <span class="text-emerald-400">"Ready to Ship"</span>
+}</code></pre>
+            <div class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span><i class="fa-solid fa-bolt text-amber-400 mr-1"></i> 99+ Performance Score</span>
+              <span><i class="fa-solid fa-shield-halved text-indigo-500 mr-1"></i> Clean &amp; Maintainable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Stats Section -->
+  <section id="about" class="py-20 border-t border-slate-200/70 dark:border-slate-800/70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="reveal max-w-3xl mx-auto text-center mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-indigo-500">About Me</span>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2">Building Fast, Responsive Interfaces With Clean Code</h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed">
+          I combine strong IT fundamentals with hands-on frontend execution across Angular, Ionic, React, and TypeScript. Having built production UIs at Sarvm and authentication workflows at DesiQna, I focus on clarity, performance, and reliable user experiences.
+        </p>
+      </div>
+
+      <div class="grid grid-cols2 lg:grid-cols-3 gap-6 reveal">
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-center shadow-sm">
+          <div class="text-3xl sm:text-4xl font-extrabold text-indigo-600 dark:text-indigo-400 counter" data-target="4">0</div>
+          <div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">Completed Projects</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-center shadow-sm">
+          <div class="text-3xl sm:text-4xl font-extrabold text-teal-500 counter" data-target="1.5">0</div>
+          <div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">Years of Experience</div>
+        </div>
+       <!--  <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-center shadow-sm">
+          <div class="text-3xl sm:text-4xl font-extrabold text-indigo-600 dark:text-indigo-400 counter" data-target="20">0</div>
+          <div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">Happy Clients &amp; Teams</div>
+        </div> -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-center shadow-sm">
+          <div class="text-3xl sm:text-4xl font-extrabold text-teal-500 counter" data-target="100">0</div>
+          <div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">Commitment (%)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-slate-100/70 dark:bg-slate-900/40 border-t border-slate-200/70 dark:border-slate-800/70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="reveal max-w-2xl mx-auto text-center mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-indigo-500">Capabilities</span>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2">Core Skills &amp; Toolkit</h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-400">A balanced stack across front-end engineering, system operations, and structured data handling.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Frontend -->
+        <div class="reveal p-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-5">
+          <div class="w-11 h-11 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <h3 class="text-xl font-bold">Frontend &amp; UI</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5"><span>Angular</span><span>95%</span></div>
+              <div class="h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-indigo-500 to-teal-400" data-width="95%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5"><span>Ionic</span><span>90%</span></div>
+              <div class="h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-indigo-500 to-teal-400" data-width="90%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5"><span>JavaScript</span><span>88%</span></div>
+              <div class="h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-indigo-500 to-teal-400" data-width="88%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Systems & Operations -->
+        <div class="reveal p-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-5">
+          <div class="w-11 h-11 rounded-xl bg-teal-500/10 text-teal-500 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <h3 class="text-xl font-bold">Systems &amp; Operations</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5"><span>Computer Fundamentals &amp; OS</span><span>92%</span></div>
+              <div class="h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-teal-400 to-indigo-500" data-width="92%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5"><span>Networking &amp; Security Basics</span><span>82%</span></div>
+              <div class="h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-teal-400 to-indigo-500" data-width="82%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5"><span>Git &amp; Workflow Automation</span><span>85%</span></div>
+              <div class="h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-teal-400 to-indigo-500" data-width="85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data & Productivity -->
+        <div class="reveal p-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-5">
+          <div class="w-11 h-11 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-table-cells"></i>
+          </div>
+          <h3 class="text-xl font-bold">Data &amp; Documentation</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5"><span>Spreadsheets &amp; Data Accuracy</span><span>94%</span></div>
+              <div class="h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-purple-500 to-indigo-500" data-width="94%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5"><span>Document Formatting &amp; Cleanup</span><span>96%</span></div>
+              <div class="h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-purple-500 to-indigo-500" data-width="96%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5"><span>Analytical Notes &amp; Research</span><span>90%</span></div>
+              <div class="h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-purple-500 to-indigo-500" data-width="90%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 border-t border-slate-200/70 dark:border-slate-800/70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-indigo-500">Portfolio</span>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-2">Featured Projects</h2>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2" id="projectFilters">
+          <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-indigo-600 text-white transition cursor-pointer">All</button>
+          <button data-filter="web" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-indigo-500/15 transition cursor-pointer">Web Apps</button>
+          <!-- <button data-filter="tools" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-indigo-500/15 transition cursor-pointer">Tools &amp; Data</button> -->
+          <button data-filter="ui" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-indigo-500/15 transition cursor-pointer">UI Systems</button>
+        </div>
+      </div>
+
+      <div id="projectsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <!-- Project 1 -->
+        <article class="project-card reveal group rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300" data-category="web">
+          <div class="h-44 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 p-6 flex flex-col justify-between text-white">
+            <div class="flex justify-between items-center">
+              <span class="px-2.5 py-1 rounded-md bg-white/15 backdrop-blur text-xs font-medium">Web App</span>
+              <i class="fa-solid fa-arrow-up-right-from-square opacity-80 group-hover:opacity-100 transition"></i>
+            </div>
+            <h3 class="text-xl font-bold">Bus Ticket Booking System</h3>
+          </div>
+          <div class="p-6 space-y-4">
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              Clean productivity dashboard with priority filtering, progress tracking, and instant local persistence.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-medium">
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">HTML/CSS</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">JavaScript</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">LocalStorage</span>
+            </div>
+           <!--  <button data-project="taskflow" class="open-modal w-full mt-2 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-indigo-500 hover:text-indigo-500 text-sm font-semibold transition cursor-pointer">
+              View Case Study
+            </button> -->
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card reveal group rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300" data-category="tools">
+          <div class="h-44 bg-gradient-to-br from-teal-500 via-cyan-600 to-blue-600 p-6 flex flex-col justify-between text-white">
+            <div class="flex justify-between items-center">
+              <span class="px-2.5 py-1 rounded-md bg-white/15 backdrop-blur text-xs font-medium">Application</span>
+              <i class="fa-solid fa-arrow-up-right-from-square opacity-80 group-hover:opacity-100 transition"></i>
+            </div>
+            <h3 class="text-xl font-bold">E-Commerce</h3>
+          </div>
+          <div class="p-6 space-y-4">
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              Batch text-normalization utility that strips stray artifacts, standardizes spacing, and exports clean copy.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-medium">
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Angular</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Ionic</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">JavaScript</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Typescript</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">CSS</span>
+            </div>
+           <!--  <button data-project="doccleaner" class="open-modal w-full mt-2 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-indigo-500 hover:text-indigo-500 text-sm font-semibold transition cursor-pointer">
+              View Case Study
+            </button> -->
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card reveal group rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300" data-category="ui">
+          <div class="h-44 bg-gradient-to-br from-amber-500 via-orange-500 to-rose-500 p-6 flex flex-col justify-between text-white">
+            <div class="flex justify-between items-center">
+              <span class="px-2.5 py-1 rounded-md bg-white/15 backdrop-blur text-xs font-medium">Tools &amp; Data</span>
+              <i class="fa-solid fa-arrow-up-right-from-square opacity-80 group-hover:opacity-100 transition"></i>
+            </div>
+            <h3 class="text-xl font-bold">Wheather App</h3>
+          </div>
+          <div class="p-6 space-y-4">
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              Accessible modals, responsive cards, and theme tokens engineered for crisp light and dark contrast.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-medium">
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Tailwind CSS</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Accessibility</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">UI Kit</span>
+            </div>
+           <!--  <button data-project="glassui" class="open-modal w-full mt-2 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-indigo-500 hover:text-indigo-500 text-sm font-semibold transition cursor-pointer">
+              View Case Study
+            </button> -->
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-slate-100/70 dark:bg-slate-900/40 border-t border-slate-200/70 dark:border-slate-800/70">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="reveal text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-indigo-500">Contact</span>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2">Let's Build Something Great</h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-400">Have a project, role, or idea in mind? Send a message or copy my email directly.</p>
+      </div>
+
+      <div class="reveal rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-6 sm:p-10 shadow-lg">
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-slate-200 dark:border-slate-800">
+          <div>
+            <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Direct Email</div>
+            <div id="emailText" class="text-base sm:text-lg font-bold text-indigo-600 dark:text-indigo-400">devendragkp1998@gmail.com</div>
+          </div>
+          <button id="copyEmailBtn" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-indigo-600 hover:text-white text-sm font-semibold transition cursor-pointer">
+            <i class="fa-regular fa-copy"></i> Copy Email
+          </button>
+        </div>
+
+      <!--   <form id="contactForm" class="space-y-5" novalidate>
+          <input type="hidden" name="access_key" value="3c684607-9605-403c-abe9-f4b1706ee862" />
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="name" class="block text-sm font-medium mb-1.5">Your Name</label>
+              <input id="name" type="text" placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-indigo-500 text-sm" />
+              <p class="error-msg text-xs text-rose-500 mt-1 hidden">Please enter your name.</p>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium mb-1.5">Email Address</label>
+              <input id="email" type="email" placeholder="jane@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-indigo-500 text-sm" />
+              <p class="error-msg text-xs text-rose-500 mt-1 hidden">Please enter a valid email address.</p>
+            </div>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium mb-1.5">Message</label>
+            <textarea id="message" rows="4" placeholder="Tell me about your project or question..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-indigo-500 text-sm"></textarea>
+            <p class="error-msg text-xs text-rose-500 mt-1 hidden">Please write a short message.</p>
+          </div>
+
+          <button type="submit" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/25 transition cursor-pointer">
+            <i class="fa-regular fa-paper-plane mr-2"></i>Send Message
+          </button>
+        </form> -->
+        <form id="contactForm" class="space-y-5" novalidate>
+          <input type="hidden" name="access_key" value="3c684607-9605-403c-abe9-f4b1706ee862" />
+          <input type="hidden" name="subject" value="New Portfolio Message" />
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="name" class="block text-sm font-medium mb-1.5">Your Name</label>
+              <input id="name" name="name" type="text" placeholder="Dev Kumar" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-indigo-500 text-sm" />
+              <p class="error-msg text-xs text-rose-500 mt-1 hidden">Please enter your name.</p>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium mb-1.5">Email Address</label>
+              <input id="email" name="email" type="email" placeholder="dev@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-indigo-500 text-sm" />
+              <p class="error-msg text-xs text-rose-500 mt-1 hidden">Please enter a valid email address.</p>
+            </div>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium mb-1.5">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell me about you..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-indigo-500 text-sm"></textarea>
+            <p class="error-msg text-xs text-rose-500 mt-1 hidden">Please write a short message.</p>
+          </div>
+
+          <button id="submitBtn" type="submit" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/25 transition cursor-pointer">
+            <i class="fa-regular fa-paper-plane mr-2"></i>Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Social-links -->
+          <div class="flex items-center justify-center gap-10 pt-3 text-slate-500 dark:text-slate-400">
+            <h3 class="soclial-link">OTHER SOCIAL LINK👉</h1>
+            <a href="https://github.com/DevendraKumar-G" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hover:text-indigo-500 hover:-translate-y-0.5 transition text-3xl">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/devendra-kumarchauhan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hover:text-indigo-500 hover:-translate-y-0.5 transition text-3xl">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/devendra.kumar.chauhan/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-indigo-500 hover:-translate-y-0.5 transition text-3xl">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <button id="copyEmailHero" aria-label="Copy Email" class="hover:text-indigo-500 hover:-translate-y-0.5 transition text-3xl cursor-pointer" title="Copy Email Address">
+              <!-- <i class="fa-regular fa-envelope"></i> -->
+            </button>
+          </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-slate-200/70 dark:border-slate-800/70 text-center text-sm text-slate-500 dark:text-slate-400">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <p>© <span id="year"></span> Devendra Kumar. Crafted with HTML, CSS &amp; JavaScript.</p>
+      <div class="flex items-center gap-4">
+        <div class="relative group inline-flex items-center justify-center">
+          <!-- Hover Popup Tooltip -->
+          <span class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 translate-y-1 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 group-hover:-translate-y-0.5 transition-all duration-200 px-3 py-1 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-semibold whitespace-nowrap shadow-lg">
+            Back to Top
+            <span class="block w-2 h-2 bg-slate-900 dark:bg-white rotate-45 absolute -bottom-1 left-1/2 -translate-x-1/2"></span>
+          </span>
+
+          <!-- Circular Up-Arrow Button -->
+          <a href="#home" aria-label="Scroll back to top" class="w-14 h-12 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-indigo-500 hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-600 dark:hover:text-white flex items-center justify-center shadow-sm hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-indigo-600/25 transition-all duration-200">
+            <i class="fa-solid fa-up-long text-base"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Details Modal -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/70 backdrop-blur-sm p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-lg w-full p-6 sm:p-7 shadow-2xl space-y-5 relative">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <span id="modalCategory" class="text-xs font-bold uppercase tracking-wider text-indigo-500"></span>
+          <h3 id="modalTitle" class="text-2xl font-bold mt-1"></h3>
+        </div>
+        <button id="closeModal" aria-label="Close Modal" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-rose-500 hover:text-white flex items-center justify-center transition cursor-pointer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <p id="modalDesc" class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+      <div>
+        <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Key Highlights</div>
+        <ul id="modalHighlights" class="space-y-2 text-sm text-slate-600 dark:text-slate-300 list-disc list-inside"></ul>
+      </div>
+      <div class="pt-2 flex justify-end">
+        <button id="closeModalBtn" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition cursor-pointer">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 translate-y-20 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-xl text-sm font-medium">
+    <i class="fa-solid fa-circle-check text-emerald-400 dark:text-emerald-600"></i>
+    <span id="toastMessage">Action completed!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
